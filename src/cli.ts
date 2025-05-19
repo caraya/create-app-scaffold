@@ -34,7 +34,8 @@ async function main() {
     choices: [
       { title: 'Vue', value: 'vue' },
       { title: 'React', value: 'react' },
-      { title: 'None (vanilla TS)', value: 'vanilla' }
+      { title: 'Vanilla TS', value: 'ts' },
+      { title: 'Vanilla JS', value: 'js' }
     ],
     initial: 0
   });
