@@ -7,12 +7,19 @@ import {
   writeFileSync
 } from 'node:fs';
 import {
+  dirname,
   resolve,
   join
 } from 'node:path';
+import {
+  fileURLToPath
+} from 'url'
 import prompts from 'prompts';
 import { Package, DependencyCollection } from "@manuth/package-json-editor";
 
+// emulate CommonJS __filename & __dirname
+const __filename = fileURLToPath(import.meta.url)
+const __dirname  = dirname(__filename)
 /**
  * Entry point: gathers options and generates project files.
  */
