@@ -6,7 +6,7 @@
     "create-app-scaffold": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node utils/add-shebang.js",
     "prepare": "npm run build",
     "lint": "eslint . --ext .ts,.tsx,.js",
     "lint:fix": "eslint . --ext .ts,.tsx,.js --fix",
