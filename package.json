@@ -7,7 +7,7 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "build": "tsup",
+    "build": "tsc --project tsconfig.json",
     "lint": "eslint . --ext .ts,.tsx,.js",
     "lint:fix": "eslint . --ext .ts,.tsx,.js --fix",
     "test": "playwright test",
@@ -28,12 +28,11 @@
     "eslint": "^9.26.0",
     "globals": "^16.1.0",
     "prettier": "^3.0.0",
-    "tsup": "^8.4.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1"
   },
   "description": "A CLI tool for scaffolding Vite-based Vue, React, or vanilla TypeScript projects.",
-  "main": "eslint.config.js",
+  "main": "dist/cli.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caraya/create-app.git"

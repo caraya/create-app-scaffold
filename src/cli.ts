@@ -153,7 +153,7 @@ function copyDir(srcDir: string, destDir: string) {
  * Copy a single file to the current working directory.
  */
 function copyFile(src: string, cwd: string) {
-  const name = resolve(src).split(/[\/]/).pop()!;
+  const name = resolve(src).split(/[/]/).pop()!;
   writeFileSync(join(cwd, name), readFileSync(src));
 }
 
