@@ -63,12 +63,12 @@ async function main() {
       type: 'confirm',
       name: 'prettier',
       message: 'Install Prettier?',
-      initial: true
+      initial: false
     },
     {
       type: 'confirm',
       name: 'eslint',
-      message: 'Install ESLint + Google shareable config?',
+      message: 'Install ESLint?',
       initial: true
     }
   ]);
@@ -135,9 +135,12 @@ async function main() {
   copyDir(templateDir, cwd);
 
   // 7. Copy common config files
-  if (prettier) copyFile(resolve(__dirname, '..', 'templates', 'configs', '.prettierrc'), cwd);
-  if (eslint) copyFile(resolve(__dirname, '..', 'templates', 'configs', '.eslintrc.cjs'), cwd);
-  if (playwright) copyDir(resolve(__dirname, '..', 'templates', 'configs', 'playwright'), cwd);
+  // Copy typescript config
+  copyFile(resolve(__dirname, '..', 'templates', 'configs', 'tsconfig.json'), cwd);
+  // conditionally copy prettier, eslint, and playwright config files
+  if (prettier) copyFile(resolve(__dirname, '..', 'templates', 'configs', '.prettierrc.js'), cwd);
+  if (eslint) copyFile(resolve(__dirname, '..', 'templates', 'configs', '.eslint.config.js'), cwd);
+  if (playwright) copyDir(resolve(__dirname, '..', 'templates', 'configs', 'playwright.config.ts'), cwd);
 
   console.log('Project scaffolded successfully!');
 }
