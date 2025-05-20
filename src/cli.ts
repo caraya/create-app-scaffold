@@ -69,7 +69,7 @@ async function main() {
       type: 'confirm',
       name: 'eslint',
       message: 'Install ESLint?',
-      initial: true
+      initial: false
     }
   ]);
 
