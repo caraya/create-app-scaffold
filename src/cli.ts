@@ -142,6 +142,10 @@ async function main() {
   if (eslint) copyFile(resolve(__dirname, '..', 'templates', 'configs', '.eslint.config.js'), cwd);
   if (playwright) copyFile(resolve(__dirname, '..', 'templates', 'configs', 'playwright.config.ts'), cwd);
 
+  // 8. Write package.json to current working directory
+  const packageJsonPath = join(cwd, 'package.json')
+  writeFileSync(packageJsonPath, JSON.stringify(pkg.ToJSON(), null, 2), { encoding: 'utf-8' });
+
   console.log('Project scaffolded successfully!');
 }
 
