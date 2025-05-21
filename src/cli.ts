@@ -118,12 +118,12 @@ async function main() {
     const eslintDependencies = new DependencyCollection(
     {
         devDependencies: {
-            "@eslint/css": "^0.8.1",
-            "@eslint/js": "^9.26.0",
-            "@eslint/json": "^0.12.0",
-            "@eslint/markdown": "^6.4.0",
-            "@eslint/typescript": "^0.1.0",
-            "typescript-eslint": "^8.32.1"
+            "@eslint/css": "*",
+            "@eslint/js": "*",
+            "@eslint/json": "*",
+            "@eslint/markdown": "*",
+            "@eslint/typescript": "*",
+            "typescript-eslint": "*"
         }
     });
     pkg.Register(eslintDependencies);
