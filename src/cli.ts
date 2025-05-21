@@ -140,7 +140,7 @@ async function main() {
   // conditionally copy prettier, eslint, and playwright config files
   if (prettier) copyFile(resolve(__dirname, '..', 'templates', 'configs', '.prettierrc.js'), cwd);
   if (eslint) copyFile(resolve(__dirname, '..', 'templates', 'configs', '.eslint.config.js'), cwd);
-  if (playwright) copyDir(resolve(__dirname, '..', 'templates', 'configs', 'playwright.config.ts'), cwd);
+  if (playwright) copyFile(resolve(__dirname, '..', 'templates', 'configs', 'playwright.config.ts'), cwd);
 
   console.log('Project scaffolded successfully!');
 }
