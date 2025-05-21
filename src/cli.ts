@@ -84,45 +84,45 @@ async function main() {
     },
     dependencies: {},
     devDependencies: {
-      vite: '*',
-      typescript: '*',
-      '@types/node': '*'
+      vite: '>=6.3.5',
+      typescript: '>=5.3.8',
+      '@types/node': '>=22.15.21'
     }
   });
 
   // 4. Framework dependencies
   if (framework === 'vue') {
-    pkg.Dependencies.Add('vue','*');
-    pkg.DevelopmentDependencies.Add('@vitejs/plugin-vue', '*');
+    pkg.Dependencies.Add('vue','>=3.15.14');
+    pkg.DevelopmentDependencies.Add('@vitejs/plugin-vue', '>=5.2.4');
     if (useRouter) {
-      pkg.DevelopmentDependencies.Add('vue-router', '*')
+      pkg.DevelopmentDependencies.Add('vue-router', '>=4.5.1')
     }
   } else if (framework === 'react') {
-    pkg.Dependencies.Add('react', '*');
-    pkg.Dependencies.Add('react-dom', '*');
-    pkg.DevelopmentDependencies.Add('@vitejs/plugin-react', '*');
+    pkg.Dependencies.Add('react', '>=19.0.1');
+    pkg.Dependencies.Add('react-dom', '>=19.0.1');
+    pkg.DevelopmentDependencies.Add('@vitejs/plugin-react', '>=4.4.1');
     if (useRouter) {
-      pkg.Dependencies.Add('react-router-dom', '*');
+      pkg.Dependencies.Add('react-router-dom', '>=7.6.0');
     }
   }
 
   // 5. Tooling dependencies
   if (playwright) {
-    pkg.DevelopmentDependencies.Add('@playwright/test', '*');
+    pkg.DevelopmentDependencies.Add('@playwright/test', '>=1.52.0');
   }
   if (prettier) {
-    pkg.DevelopmentDependencies.Add('prettier', '*');
+    pkg.DevelopmentDependencies.Add('prettier', '>=3.5.3');
   }
   if (eslint) {
-    pkg.DevelopmentDependencies.Add('eslint', '*');
+    pkg.DevelopmentDependencies.Add('eslint', '>=9.27.0');
     const eslintDependencies = new DependencyCollection(
     {
         devDependencies: {
-            "@eslint/css": "*",
-            "@eslint/js": "*",
-            "@eslint/json": "*",
-            "@eslint/markdown": "*",
-            "typescript-eslint": "*"
+            "@eslint/css": ">=0.8.1",
+            "@eslint/js": ">=9.27.0",
+            "@eslint/json": ">=0.12.0",
+            "@eslint/markdown": ">=6.4.0",
+            "typescript-eslint": ">=8.32.1"
         }
     });
     pkg.Register(eslintDependencies);
