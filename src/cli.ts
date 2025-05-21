@@ -122,7 +122,6 @@ async function main() {
             "@eslint/js": "*",
             "@eslint/json": "*",
             "@eslint/markdown": "*",
-            "@eslint/typescript": "*",
             "typescript-eslint": "*"
         }
     });
